@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ember &amp; Ore — Ethiopian Guji coffee, roasted in Portland, delivered monthly</title>
+  <meta name="description" content="Small-batch Ethiopian Guji, roasted light in Portland, Oregon. A 250 g bag for $22, or a monthly bean subscription you can skip or cancel any time." />
+  <meta property="og:title" content="Ember &amp; Ore — Guji coffee, roasted in Portland" />
+  <meta property="og:description" content="A 250 g bag of single-origin Ethiopian Guji for $22. Subscribe and a fresh bag arrives every month." />
+  <meta property="og:image" content="./og.jpg" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#211812" />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="./favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="./styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Store",
+        "@id": "#roaster",
+        "name": "Ember & Ore",
+        "description": "Small-batch coffee roaster in Portland, Oregon.",
+        "address": { "@type": "PostalAddress", "addressLocality": "Portland", "addressRegion": "OR", "addressCountry": "US" }
+      },
+      {
+        "@type": "Product",
+        "name": "Ethiopia Guji — single origin, 250 g",
+        "brand": { "@id": "#roaster" },
+        "description": "Single-origin coffee from the Guji zone of southern Ethiopia, roasted light in small batches in Portland.",
+        "image": "./og.jpg",
+        "offers": { "@type": "Offer", "price": "22.00", "priceCurrency": "USD", "availability": "https://schema.org/InStock" }
+      }
+    ]
+  }
+  </script>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/",
+      "gsap": "https://cdn.jsdelivr.net/npm/gsap@3.13.0/index.js",
+      "gsap/ScrollTrigger": "https://cdn.jsdelivr.net/npm/gsap@3.13.0/ScrollTrigger.js",
+      "lenis": "https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.mjs"
+    }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <a class="brand" href="#top" aria-label="Ember &amp; Ore, back to top">
+      <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c4 5 8 8.6 8 14.5A8 8 0 0 1 8 17.5C8 11.6 12 8 16 3Z" fill="currentColor"/><path d="M16 12c-1.6 3-1.6 9 0 13" stroke="var(--kiln)" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      Ember &amp; Ore
+    </a>
+    <nav aria-label="Primary">
+      <a class="nav__link" href="#bag">The coffee</a>
+      <a class="nav__link" href="#brew">Brew it</a>
+      <a class="btn btn--small" href="#subscribe">Subscribe</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" data-hero="scene" aria-label="Ember &amp; Ore Guji coffee">
+      <div class="hero__media">
+        <img class="hero__poster" src="./poster.jpg" alt="" aria-hidden="true" width="1600" height="1000" />
+        <canvas id="gl" role="img" aria-label="A kraft 250 gram bag of Ember &amp; Ore Guji coffee surrounded by beans that roast from green to brown as you scroll. Drag to turn the bag."></canvas>
+      </div>
+
+      <div class="hero__copy">
+        <p class="kicker">Small-batch roaster, Portland, Oregon</p>
+        <h1 class="display">Ethiopian Guji, roasted in Portland, on your doorstep every month.</h1>
+        <p class="lede">One origin, one 250&nbsp;g bag, $22. Roasted light so the fruit and flowers of southern Ethiopia stay in the cup.</p>
+        <div class="actions">
+          <a class="btn" href="#subscribe">Start my subscription</a>
+          <a class="link" href="#bag">Or buy one bag, $22</a>
+        </div>
+      </div>
+
+      <aside class="roast" aria-label="Roast progress" aria-live="off">
+        <p class="hero__hint" aria-hidden="true"><span class="hint--drag">Drag the bag to turn it.</span> Scroll to roast it.</p>
+        <svg class="roast__curve" viewBox="0 0 200 90" aria-hidden="true">
+          <path class="roast__grid" d="M0 89.5H200M0 60H200M0 30H200" />
+          <path class="roast__path" d="M2 80 C 30 72, 55 52, 85 40 S 140 22, 168 16 L 198 13" pathLength="1" />
+          <circle class="roast__dot" r="3.5" cx="2" cy="80" />
+        </svg>
+        <p class="roast__stage"><span data-roast-stage>Green, as it lands from Guji</span></p>
+        <p class="roast__temp"><span data-roast-temp>24</span>&thinsp;°C <span class="roast__note">bean temp, approx.</span></p>
+      </aside>
+
+    </section>
+
+    <section class="bag" id="bag" aria-labelledby="bag-title">
+      <div class="bag__inner">
+        <p class="bag__weight" aria-hidden="true">250<span>g</span></p>
+        <div class="bag__body">
+          <h2 id="bag-title">One bag, one place, picked and roasted to show it off.</h2>
+          <p>Guji is a coffee zone in the far south of Ethiopia, in the Oromia region, where coffee grows high on smallholder farms among the forest. Its cups are known for being bright, floral and full of stone fruit. We roast it light, in small batches, so that is what you taste.</p>
+          <dl class="specs">
+            <div><dt>Origin</dt><dd>Guji zone, Oromia, Ethiopia</dd></div>
+            <div><dt>Roast</dt><dd>Light, small batch, Portland</dd></div>
+            <div><dt>Lot details</dt><dd>Washing station, process and tasting notes printed on every bag</dd></div>
+            <div><dt>Size</dt><dd>250&nbsp;g, about 16 cups of pour-over</dd></div>
+            <div><dt>Price</dt><dd class="price">$22</dd></div>
+          </dl>
+          <div class="actions">
+            <a class="btn" href="#subscribe">Get it every month</a>
+            <button class="link link--button" type="button" data-buy-one>Buy one bag, $22</button>
+          </div>
+          <p class="buy-note" data-buy-note hidden>Single-bag checkout isn’t connected in this preview yet. It will open the shop checkout once it is.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="month" aria-labelledby="month-title">
+      <div class="month__head">
+        <h2 id="month-title">What a month of Ember &amp; Ore looks like</h2>
+        <p>No warehouse shelf in between. Your bag is roasted for your delivery, not pulled from stock.</p>
+      </div>
+      <ol class="timeline">
+        <li><span class="timeline__day">Roast day</span><p>Your share of the Guji goes into the roaster in a small batch and comes out light, sweet and loud with fruit.</p></li>
+        <li><span class="timeline__day">A day later</span><p>Rested, bagged in a valve pouch, stamped with its roast date, sent out from Portland.</p></li>
+        <li><span class="timeline__day">At your door</span><p>Peak flavour lands about a week to a month after roasting, which is exactly how long a 250&nbsp;g bag lasts most people.</p></li>
+        <li><span class="timeline__day">The next one</span><p>As the bag runs low, the next roast is already booked. Skip a month or cancel from the email, any time.</p></li>
+      </ol>
+    </section>
+
+    <section class="subscribe" id="subscribe" aria-labelledby="sub-title">
+      <div class="subscribe__terms">
+        <h2 id="sub-title">Subscribe to the Guji</h2>
+        <p class="subscribe__price"><strong>$22</strong> per 250&nbsp;g bag</p>
+        <ul class="terms">
+          <li>Fresh-roasted bag every 4 weeks, or every 2 if you drink a lot</li>
+          <li>Whole bean or ground for your brewer</li>
+          <li>Skip, pause or cancel any time, no fees</li>
+          <li>Shipping shown at checkout</li>
+        </ul>
+      </div>
+
+      <form class="sub-form" data-sub-form novalidate>
+        <fieldset>
+          <legend>How should we grind it?</legend>
+          <div class="choice">
+            <label><input type="radio" name="grind" value="whole" checked /><span>Whole bean</span></label>
+            <label><input type="radio" name="grind" value="filter" /><span>Filter</span></label>
+            <label><input type="radio" name="grind" value="espresso" /><span>Espresso</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>How often?</legend>
+          <div class="choice">
+            <label><input type="radio" name="cadence" value="4w" checked /><span>Every 4 weeks</span></label>
+            <label><input type="radio" name="cadence" value="2w" /><span>Every 2 weeks</span></label>
+          </div>
+        </fieldset>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@yourmail.com" />
+        </div>
+        <div class="field field--short">
+          <label for="zip">ZIP code</label>
+          <input id="zip" name="zip" inputmode="numeric" autocomplete="postal-code" pattern="[0-9]{5}" maxlength="5" required placeholder="97214" />
+        </div>
+        <button class="btn btn--wide" type="submit">Start my subscription, $22 a bag</button>
+        <p class="sub-form__msg" data-sub-msg role="status"></p>
+      </form>
+    </section>
+
+    <section class="brew" id="brew" aria-labelledby="brew-title">
+      <h2 id="brew-title">Brew it like we do</h2>
+      <p>Light-roasted Guji likes hot water and a little patience. Our starting point for a pour-over, then adjust to taste.</p>
+      <table class="recipe">
+        <caption class="visually-hidden">Pour-over recipe</caption>
+        <tbody>
+          <tr><th scope="row">Coffee</th><td>15&nbsp;g, medium-fine</td></tr>
+          <tr><th scope="row">Water</th><td>250&nbsp;g at 94–96&nbsp;°C</td></tr>
+          <tr><th scope="row">Bloom</th><td>40&nbsp;g, wait 40 seconds</td></tr>
+          <tr><th scope="row">Pour</th><td>The rest in two slow pours</td></tr>
+          <tr><th scope="row">Total time</th><td>About 3 minutes</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="closing" aria-labelledby="close-title">
+      <h2 id="close-title">Next roast day, your bag could be in it.</h2>
+      <a class="btn" href="#subscribe">Start my subscription</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span data-year></span> Ember &amp; Ore. Small-batch coffee, roasted in Portland, Oregon.</p>
+    <p class="credit">Site by <a href="mailto:harishp0132@gmail.com">Harish</a></p>
+  </footer>
+
+  <a class="sticky-cta" href="#subscribe">Subscribe <span>$22 a bag, monthly</span></a>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
