@@ -191,3 +191,6 @@ p { text-wrap: pretty; }
   .hero__poster { opacity: 1 !important; }
   .roast__path { stroke-dashoffset: 0; }
 }
+
+/* block-tower scrollbar (blockbar.js), no native scrollbar */
+:root { --bb-accent: var(--ember); --bb-ink: var(--kiln); --bb-bone: var(--husk); --bb-line: color-mix(in oklab, var(--husk-dim) 55%, transparent); --bb-font: inherit; }

@@ -72,7 +72,7 @@
   </header>
 
   <main id="main">
-    <section class="hero" id="top" data-hero="scene" aria-label="Ember &amp; Ore Guji coffee">
+    <section class="hero" id="top" data-hero="scene" aria-label="Ember &amp; Ore Guji coffee" data-bb-label="Intro">
       <div class="hero__media">
         <img class="hero__poster" src="./poster.jpg" alt="" aria-hidden="true" width="1600" height="1000" />
         <canvas id="gl" role="img" aria-label="A kraft 250 gram bag of Ember &amp; Ore Guji coffee surrounded by beans that roast from green to brown as you scroll. Drag to turn the bag."></canvas>
@@ -101,7 +101,7 @@
 
     </section>
 
-    <section class="bag" id="bag" aria-labelledby="bag-title">
+    <section class="bag" id="bag" aria-labelledby="bag-title" data-bb-label="The coffee">
       <div class="bag__inner">
         <p class="bag__weight" aria-hidden="true">250<span>g</span></p>
         <div class="bag__body">
@@ -123,7 +123,7 @@
       </div>
     </section>
 
-    <section class="month" aria-labelledby="month-title">
+    <section class="month" aria-labelledby="month-title" data-bb-label="Your month">
       <div class="month__head">
         <h2 id="month-title">What a month of Ember &amp; Ore looks like</h2>
         <p>No warehouse shelf in between. Your bag is roasted for your delivery, not pulled from stock.</p>
@@ -136,7 +136,7 @@
       </ol>
     </section>
 
-    <section class="subscribe" id="subscribe" aria-labelledby="sub-title">
+    <section class="subscribe" id="subscribe" aria-labelledby="sub-title" data-bb-label="Subscribe">
       <div class="subscribe__terms">
         <h2 id="sub-title">Subscribe to the Guji</h2>
         <p class="subscribe__price"><strong>$22</strong> per 250&nbsp;g bag</p>
@@ -177,7 +177,7 @@
       </form>
     </section>
 
-    <section class="brew" id="brew" aria-labelledby="brew-title">
+    <section class="brew" id="brew" aria-labelledby="brew-title" data-bb-label="Brew it">
       <h2 id="brew-title">Brew it like we do</h2>
       <p>Light-roasted Guji likes hot water and a little patience. Our starting point for a pour-over, then adjust to taste.</p>
       <table class="recipe">
@@ -192,7 +192,7 @@
       </table>
     </section>
 
-    <section class="closing" aria-labelledby="close-title">
+    <section class="closing" aria-labelledby="close-title" data-bb-label="Start">
       <h2 id="close-title">Next roast day, your bag could be in it.</h2>
       <a class="btn" href="#subscribe">Start my subscription</a>
     </section>
@@ -206,5 +206,6 @@
   <a class="sticky-cta" href="#subscribe">Subscribe <span>$22 a bag, monthly</span></a>
 
   <script type="module" src="./main.js"></script>
+  <script type="module" src="./blockbar.js"></script>
 </body>
 </html>
