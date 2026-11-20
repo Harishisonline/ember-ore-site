@@ -59,10 +59,14 @@ p { text-wrap: pretty; }
 .brand__mark { width: 1.35rem; height: 1.35rem; color: var(--ember); }
 
 /* ---------- buttons */
-.btn { display: inline-flex; align-items: center; justify-content: center; gap: .5em; padding: .95em 1.6em; background: var(--ember); color: var(--on-ember); border: 0; border-radius: var(--pill); text-decoration: none; font: 600 var(--step-0)/1.1 var(--font-text); cursor: pointer; transition: transform .25s var(--ease), background .25s; }
-.btn:hover { transform: translateY(-2px); background: oklch(0.77 0.16 58); }
-.btn:active { transform: translateY(0); }
-.btn--small { padding: .6em 1.15em; font-size: var(--step--1); }
+/* tactile roasted pills: hard ember edge, lift on hover, press on click (0.16s) */
+.btn { --edge: var(--ember-ink); display: inline-flex; align-items: center; justify-content: center; gap: .5em; padding: .95em 1.6em; background: var(--ember); color: var(--on-ember); border: 0; border-radius: var(--pill); text-decoration: none; font: 600 var(--step-0)/1.1 var(--font-text); cursor: pointer;
+  box-shadow: 0 5px 0 var(--edge), 0 14px 26px -16px rgba(0,0,0,.6); transition: transform .16s cubic-bezier(.2,.8,.2,1), box-shadow .16s cubic-bezier(.2,.8,.2,1), background-color .18s; }
+@media (hover: hover) { .btn:hover { transform: translateY(-2px); background: oklch(0.77 0.16 58); box-shadow: 0 7px 0 var(--edge), 0 18px 30px -16px rgba(0,0,0,.6); } }
+.btn:focus-visible { background: oklch(0.77 0.16 58); }
+.btn:active { transform: translateY(4px); box-shadow: 0 1px 0 var(--edge), 0 6px 12px -8px rgba(0,0,0,.5); transition-duration: .06s; }
+.btn--small { padding: .6em 1.15em; font-size: var(--step--1); box-shadow: 0 3px 0 var(--edge); }
+@media (hover: hover) { .btn--small:hover { box-shadow: 0 5px 0 var(--edge); } }
 .btn--wide { width: 100%; }
 .link { font-weight: 500; text-decoration: underline; text-underline-offset: .3em; text-decoration-thickness: 1px; }
 .link:hover { text-decoration-thickness: 2px; }
@@ -194,3 +198,4 @@ p { text-wrap: pretty; }
 
 /* block-tower scrollbar (blockbar.js), no native scrollbar */
 :root { --bb-accent: var(--ember); --bb-ink: var(--kiln); --bb-bone: var(--husk); --bb-line: color-mix(in oklab, var(--husk-dim) 55%, transparent); --bb-font: inherit; }
+:root { --cr-accent: var(--ember); }
